@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { COLORS, WEIGHTS } from "../../constants";
 
-function Button() {
-  return <Wrapper>Authorization</Wrapper>;
+function Button({children}) {
+  return <Wrapper>{children}</Wrapper>;
 }
 
 const Wrapper = styled.button`

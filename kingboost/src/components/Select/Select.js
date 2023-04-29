@@ -5,7 +5,6 @@ import { COLORS, WEIGHTS } from "../../constants";
 import { ChevronDown } from "react-feather";
 
 function Select({ selectProperty,borderRadious}) {
-  console.log(selectProperty);
   const [isOpen, setIsOpen] = useState(false);
   const [language, setLanguage] = useState(selectProperty[0]);
 

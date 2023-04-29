@@ -81,7 +81,7 @@ function Navbar() {
               />
             </svg>
           </ShoppingIcon>
-          <Button />
+        <Button>Authorization</Button>
         </NavWrapper>
       </Container>
     </Wrapper>
