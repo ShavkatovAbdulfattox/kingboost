@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Search } from "react-feather";
 import styled from "styled-components";
 import { COLORS } from "../../constants";
-import HedaerLogo from "../../assets/Header/HeaderLogo.png";
 import Button from "../Button";
 import Container from "../Container/Container";
+
+import HedaerLogo from "../../assets/Header/HeaderLogo.png";
 
 const gameImages = [
   {
@@ -29,6 +30,9 @@ const Warcraft = () => {
       {gameImages.map((obj, i) => {
         return (
           <WarcraftCard key={i}>
+            <>
+              <img src="image/wow.png" alt="wow-img" className="wow_img" />
+            </>
             <img src={obj.img} alt="warcraft-img" />
             <div>
               <h3>World of Warcraft</h3>
@@ -42,6 +46,7 @@ const Warcraft = () => {
 };
 
 function HeaderContent() {
+  const [show, setShow] = useState(false);
   return (
     <Wrapper>
       <Container>
@@ -65,7 +70,11 @@ function HeaderContent() {
           </SearchWrapper>
           <Warcraft />
           <Warcraft />
-          <Button>Show more</Button>
+          {show && <Warcraft />}
+
+          <div onClick={() => setShow(!show)}>
+            <Button>{show === true ? "Show less" : "Show more"}</Button>
+          </div>
         </HeaderWrapper>
       </Container>
     </Wrapper>
@@ -154,13 +163,14 @@ const WarcraftGrid = styled.div`
 `;
 const WarcraftCard = styled.div`
   flex-basis: 261px;
+  position: relative;
   /* flex: 1; */
   & div {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
   }
-  & img {
+  & > img {
     width: 100%;
     object-fit: none;
   }
@@ -171,6 +181,14 @@ const WarcraftCard = styled.div`
     background-color: ${COLORS.gray.darkLight};
     color: ${COLORS.gray.new};
     padding: 4px 8px;
+    cursor: pointer;
+  }
+  & .wow_img {
+    object-fit: contain;
+    width: auto;
+    position: absolute;
+    top: 9px;
+    left: 11px;
     cursor: pointer;
   }
 `;

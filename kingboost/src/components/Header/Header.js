@@ -15,10 +15,9 @@ function Header() {
 }
 
 const Wrapper = styled.header`
-  height: 100vh;
   background: url(${HeaderBackground}) no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: top;
   display: flex;
   flex-direction: column;
 `;

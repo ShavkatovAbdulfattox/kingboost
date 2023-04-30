@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
+import { COLORS } from "../../constants";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -81,10 +82,20 @@ ul > li {
 html, body, #root {
   height: 100%;
   background-color: #171717;
-/* font-family: 'Poppins', sans-serif; */
+scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  width: 0.6rem; 
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: ${COLORS.violet};
+  border-radius: 10px;
 
 }
 `;
 
 export default GlobalStyles;
- 
