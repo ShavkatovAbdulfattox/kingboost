@@ -13,6 +13,7 @@ export const COLORS = {
   primary: "hsl(340deg, 65%, 47%)",
   secondary: "hsl(240deg, 60%, 63%)",
   violet: "hsla(267, 98%, 43%, 1)",
+  darkViolet: "hsla(267, 50%, 43%, 1)",
 };
   
   export const WEIGHTS = {

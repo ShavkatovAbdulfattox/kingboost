@@ -4,6 +4,7 @@ import { COLORS } from "../../constants";
 import BenefitSection from "../BenefitSection";
 import TutorialSection from "../TutorialSection/TutorialSection";
 import GameInformation from "../GameInformation/GameInformation";
+import Reviews from "../Reviews/Reviews";
 
 function Main() {
   return (
@@ -11,6 +12,7 @@ function Main() {
       <BenefitSection />
       <TutorialSection />
       <GameInformation />
+      <Reviews />
     </Wrapper>
   );
 }

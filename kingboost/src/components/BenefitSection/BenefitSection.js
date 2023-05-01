@@ -21,25 +21,31 @@ const benefitDesc = [
 
 function BenefitSection() {
   return (
-    <Wrapper>
-      <Container>
-        <h3>BENEFITS</h3>
-        <Title>Why to choose us?</Title>
+    <>
+      <Wrapper>
+        <Container>
+          <h3>BENEFITS</h3>
+          <Title>Why to choose us?</Title>
 
-        <BenefitContent>
-          {benefitDesc.map(({ img, title, text }, i) => (
-            <BenefitItem key={i} style={{
-              height:i===1 ?"233px":"",
-            }} >
-              <img src={img} alt={title} />
-              <h2>{title}</h2>
-             {text && <p>{text}</p>}
-            </BenefitItem>
-          ))}
-        </BenefitContent>
-      </Container>
-      <img src="image/main/diamond.png" alt="" />
-    </Wrapper>
+          <BenefitContent>
+            {benefitDesc.map(({ img, title, text }, i) => (
+              <BenefitItem
+                key={i}
+                style={{
+                  height: i === 1 ? "233px" : "",
+                }}
+              >
+                <img src={img} alt={title} />
+                <h2>{title}</h2>
+                {text && <p>{text}</p>}
+              </BenefitItem>
+            ))}
+          </BenefitContent>
+        </Container>
+        <img src="image/main/diamond.png" alt="" />
+      </Wrapper>
+      <Line></Line>
+    </>
   );
 }
 const Wrapper = styled.section`
@@ -50,7 +56,7 @@ const Wrapper = styled.section`
     text-align: center;
   }
 
-  & > img{
+  & > img {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -69,7 +75,8 @@ const BenefitContent = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 23px;
-
+  position: relative;
+  z-index: 2;
 `;
 const BenefitItem = styled.div`
   background-color: ${COLORS.gray.light};
@@ -81,7 +88,7 @@ const BenefitItem = styled.div`
   padding: 27px 50px;
   border-radius: 12px;
   margin-top: 35px;
-  & .speacial-style{
+  & .speacial-style {
     flex: 1;
     height: 233px;
   }
@@ -102,4 +109,10 @@ const BenefitItem = styled.div`
     margin-top: 10px;
   }
 `;
+
+const Line = styled.hr`
+border: 2px solid #313132;
+  /* width: 100%; */
+`;
+
 export default BenefitSection;

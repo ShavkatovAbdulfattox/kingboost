@@ -85,14 +85,14 @@ html, body, #root {
 scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
-  width: 0.7rem; 
+  width:1rem; 
 }
  
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);  border-radius: 10px;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: ${COLORS.violet};
+  background-color: ${COLORS.darkViolet};
   border-radius: 10px;
 
 }
