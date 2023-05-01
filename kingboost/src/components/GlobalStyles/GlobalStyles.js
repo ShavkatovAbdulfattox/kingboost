@@ -85,7 +85,7 @@ html, body, #root {
 scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
-  width: 0.6rem; 
+  width: 0.7rem; 
 }
  
 body::-webkit-scrollbar-track {

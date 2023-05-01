@@ -2,13 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import { COLORS, WEIGHTS } from "../../constants";
 
-function Button({children}) {
-  return <Wrapper>{children}</Wrapper>;
+function Button({ children, bgColor }) {
+  return (
+    <Wrapper
+      style={{
+        "--background": bgColor ? COLORS.white : COLORS.violet,
+        "--color": bgColor ? COLORS.violet : COLORS.white,
+      }}
+    >
+      {children}
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.button`
-  color: ${COLORS.white};
-  background-color: ${COLORS.violet};
+  color: var(--color);
+  background-color:var(--background) ;
   font-weight: ${WEIGHTS.medium};
   font-size: 1.1rem;
   cursor: pointer;
