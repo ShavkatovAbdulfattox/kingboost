@@ -24,6 +24,7 @@ const Wrapper = styled.button`
   border: 1px solid ${COLORS.violet};
   border-radius: 999px;
   padding: 10px 16px;
+  flex-shrink: 0;
 `;
 
 export default Button;

@@ -9,7 +9,7 @@ import Reviews from "../Reviews/Reviews";
 function Main() {
   return (
     <Wrapper>
-      <BenefitSection />
+      <BenefitSection img={true}/>
       <TutorialSection />
       <GameInformation />
       <Reviews />

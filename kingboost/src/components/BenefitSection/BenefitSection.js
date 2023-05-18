@@ -19,30 +19,41 @@ const benefitDesc = [
   },
 ];
 
-function BenefitSection() {
+function BenefitSection({ title, text: textBelow, img, width, information }) {
   return (
     <>
       <Wrapper>
         <Container>
-          <h3>BENEFITS</h3>
-          <Title>Why to choose us?</Title>
+          <Center>
+            <h3>BENEFITS</h3>
+            <Title>{title ? title : "Why to choose us?"}</Title>
+            {textBelow && <p className="text">{textBelow}</p>}
+          </Center>
 
           <BenefitContent>
             {benefitDesc.map(({ img, title, text }, i) => (
               <BenefitItem
+                className={width ? "benefitWidth" : ""}
                 key={i}
-                style={{
-                  height: i === 1 ? "233px" : "",
-                }}
+                style={
+                  {
+                    // height: i === 1 ? "233px" : "",
+                  }
+                }
               >
                 <img src={img} alt={title} />
                 <h2>{title}</h2>
-                {text && <p>{text}</p>}
+                {text && <p style={{ marginBottom: "2rem" }}>{text}</p>}
+                {information && text ? (
+                  ""
+                ) : (
+                  <p>we will beat competitor’s price if you find cheaper</p>
+                )}
               </BenefitItem>
             ))}
           </BenefitContent>
         </Container>
-        <img src="image/main/diamond.png" alt="" />
+        {img ? <img src="image/main/diamond.png" alt="" /> : undefined}
       </Wrapper>
       <Line></Line>
     </>
@@ -51,9 +62,18 @@ function BenefitSection() {
 const Wrapper = styled.section`
   padding: 50px 0;
   position: relative;
+
   & h3 {
     color: ${COLORS.white};
     text-align: center;
+  }
+  & .text {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: #a5a9b4;
+    max-width: 679px;
   }
 
   & > img {
@@ -61,6 +81,12 @@ const Wrapper = styled.section`
     bottom: 0;
     left: 0;
   }
+`;
+
+const Center = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Title = styled.h2`
@@ -88,6 +114,9 @@ const BenefitItem = styled.div`
   padding: 27px 50px;
   border-radius: 12px;
   margin-top: 35px;
+  &.benefitWidth {
+    flex-basis: 356px;
+  }
   & .speacial-style {
     flex: 1;
     height: 233px;
@@ -111,7 +140,7 @@ const BenefitItem = styled.div`
 `;
 
 const Line = styled.hr`
-border: 2px solid #313132;
+  border: 2px solid #313132;
   /* width: 100%; */
 `;
 

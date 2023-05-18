@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet, Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../Logo/Logo";
 import { COLORS, WEIGHTS } from "../../constants";
@@ -51,18 +52,34 @@ function Navbar() {
       <Container>
         <NavWrapper>
           <Logo />
-          <Nav>
-            <NavLink href="!#">About us</NavLink>
-            <NavLink href="!#">Reviews</NavLink>
-            <NavLink href="!#">Contacts</NavLink>
-            <NavLink href="!#">Articles</NavLink>
-            <NavLink href="!#">Work with us</NavLink>
+          <Nav id="nav">
+            <NavLink>
+              {" "}
+              <Link to="/">About us</Link>{" "}
+            </NavLink>
+            <NavLink>
+              {" "}
+              <Link to="blogs">Reviews</Link>{" "}
+            </NavLink>
+            <NavLink>
+              {" "}
+              <Link>Contacts</Link>{" "}
+            </NavLink>
+            <NavLink>
+              {" "}
+              <Link>Articles</Link>{" "}
+            </NavLink>
+            <NavLink>
+              {" "}
+              <Link>Work with us</Link>{" "}
+            </NavLink>
+            <Outlet />
           </Nav>
           <SearchIcon>
             <Search />
           </SearchIcon>
           <Select selectProperty={selectLanguage} borderRadious="8px 0 0 0px" />
-          <Select selectProperty={selectCurrency} borderRadious="0 8px 8px 0"/>
+          <Select selectProperty={selectCurrency} borderRadious="0 8px 8px 0" />
           <ShoppingIcon
             style={{
               "--radious": "10px",
@@ -81,7 +98,7 @@ function Navbar() {
               />
             </svg>
           </ShoppingIcon>
-        <Button>Authorization</Button>
+          <Button>Authorization</Button>
         </NavWrapper>
       </Container>
     </Wrapper>
@@ -102,15 +119,19 @@ const Nav = styled.nav`
 const NavWrapper = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
-const NavLink = styled.a`
-  color: ${COLORS.gray.new};
-  font-weight: ${WEIGHTS.medium};
-  transition: color 0.3s;
+const NavLink = styled.li` list-style: none;
+  & a {
+   
+    color: ${COLORS.gray.new};
+    font-weight: ${WEIGHTS.medium};
+    transition: color 0.3s;
 
-  &:hover {
-    color: ${COLORS.white};
+    &:hover {
+      color: ${COLORS.white};
+    }
   }
 `;
 const SearchIcon = styled.button`
