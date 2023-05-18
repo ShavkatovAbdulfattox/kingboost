@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
 import styled from "styled-components";
 import Footer from "../Footer/Footer";
 import ContactHeader from "./ContactHeader/ContactHeader";
@@ -8,7 +7,6 @@ function Contact() {
   return (
     <>
       <Header>
-        <Navbar />
         <ContactHeader />
       </Header>
       <Main></Main>

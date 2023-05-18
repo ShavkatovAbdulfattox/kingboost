@@ -79,7 +79,7 @@ function Logo() {
   const [open, setOpen] = useState(false);
   return (
     <Wrapper>
-      <Link href="#!">
+      <Link to="/">
         <img src={logo} alt="nav-logo" />
       </Link>
 

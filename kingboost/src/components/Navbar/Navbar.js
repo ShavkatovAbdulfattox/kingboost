@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../Logo/Logo";
 import { COLORS, WEIGHTS } from "../../constants";
@@ -59,21 +59,20 @@ function Navbar() {
             </NavLink>
             <NavLink>
               {" "}
-              <Link to="blogs">Reviews</Link>{" "}
+              <a href="/">Reviews</a>{" "}
             </NavLink>
             <NavLink>
               {" "}
-              <Link>Contacts</Link>{" "}
+              <Link to={"/contact"}>Contacts</Link>{" "}
             </NavLink>
             <NavLink>
               {" "}
-              <Link>Articles</Link>{" "}
+              <Link to={"/"}>Articles</Link>{" "}
             </NavLink>
             <NavLink>
               {" "}
-              <Link>Work with us</Link>{" "}
+              <Link to={"/work"}>Work with us</Link>{" "}
             </NavLink>
-            <Outlet />
           </Nav>
           <SearchIcon>
             <Search />
@@ -122,9 +121,9 @@ const NavWrapper = styled.div`
   position: relative;
 `;
 
-const NavLink = styled.li` list-style: none;
+const NavLink = styled.li`
+  list-style: none;
   & a {
-   
     color: ${COLORS.gray.new};
     font-weight: ${WEIGHTS.medium};
     transition: color 0.3s;

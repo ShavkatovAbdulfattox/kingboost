@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Navbar from "../Navbar";
 // import { COLORS } from "../../constants";
 import HeaderContent from "../HeaderContent/HeaderContent";
 import HeaderBackground from "../../assets/Header/Header_bg.png";
@@ -8,7 +7,7 @@ import HeaderBackground from "../../assets/Header/Header_bg.png";
 function Header() {
   return (
     <Wrapper>
-      <Navbar />
+
       <HeaderContent />
     </Wrapper>
   );

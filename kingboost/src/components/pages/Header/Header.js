@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../Navbar/Navbar";
 import { COLORS } from "../../../constants";
 import Container from "../../Container/Container";
 import { ChevronRight } from "react-feather";
@@ -26,7 +25,6 @@ const information = [
 function Header() {
   return (
     <>
-      <Navbar />
       <>
         <Container>
           {" "}
